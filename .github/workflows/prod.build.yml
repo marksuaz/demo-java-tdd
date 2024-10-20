@@ -1,4 +1,4 @@
-name: Java CI
+name: Java CI Prod
 
 on:
   push:
@@ -19,19 +19,16 @@ jobs:
 
       - name: Maven Build
         run: |
-          mvn -B clean package
-          mkdir staging
-          cp target/*.jar staging
-
-      - name: Code Coverage
-        run: |
-          mvn -B jacoco:prepare-agent clean test jacoco:report coveralls:report -Dcoveralls.secret=${{ secrets.COVERALLS }}
+          mvn versions:set -DremoveSnapshot
+          mvn -B clean package test
+          mkdir release
+          cp target/*.jar release
 
       - name: Artifact Upload
         uses: actions/upload-artifact@v4
         with:
           name: Package
-          path: staging
+          path: release
 
       - name: Make Release
         uses: softprops/action-gh-release@v0.1.5
