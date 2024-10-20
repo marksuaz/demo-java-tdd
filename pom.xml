@@ -7,7 +7,7 @@
 
   <groupId>com.cloudacademy</groupId>
   <artifactId>bitcoin-converter-svc-lib</artifactId>
-  <version>1.2.3</version>
+  <version>1.2.4</version>
   <packaging>jar</packaging>
 
   <properties>
