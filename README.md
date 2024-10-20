@@ -1,3 +1,1 @@
 # demo-java-tdd
-
-comment
