@@ -14,6 +14,7 @@ import java.io.InputStreamReader;
 import java.text.NumberFormat;
 import java.io.InputStream;
 
+// comment
 public class ConverterSvc {
 
     private final String BITCOIN_CURRENTPRICE_URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
